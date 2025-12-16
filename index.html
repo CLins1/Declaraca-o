@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para Você 💜❤️</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(180deg, #7a1fa2, #2b003d); /* gradiente roxo claro -> escuro */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      color: #fff;
+    }
+
+    .card {
+      background: #b3000f; /* carta vermelha */
+      border-radius: 24px;
+      padding: 40px 30px;
+      width: 100%;
+      max-width: 520px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+
+    /* FOTO */
+    .photo-box {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      margin: 0 auto 25px;
+      border: 4px solid #fff;
+      overflow: hidden;
+      background: rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+    }
+
+    .photo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* BLOCO DO PEDIDO */
+    .pedido {
+      margin-top: 30px;
+      padding: 20px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.15);
+      border: 2px solid #fff;
+    }
+
+    .pedido h2 {
+      margin-bottom: 12px;
+      font-size: 1.5rem;
+    }
+
+    .pedido p {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+    }
+
+    button {
+      background: #fff;
+      color: #b3002d;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Música de fundo -->
+  <audio id="bgMusic" loop>
+    <source src="Luan Santana - Chuva de arroz (DVD Luan Santana Acústico) - Luan Santana (youtube).mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="card">
+    <div class="photo-box">
+      <img src="image.png" alt="Foto dela"> 
+    </div>
+
+    <h1>Para Minha Linda ❤️</h1>
+
+    <p>
+      Eu pensei muito em como escrever isso, porque quando o sentimento é verdadeiro,
+      ele pede cuidado. Desde que você apareceu, meus dias ganharam outro tom.
+      Tem momentos que parecem uma <em>House of Balloons</em>, leves e fora do tempo,
+      como se tudo desacelerasse só pra eu te sentir melhor.
+    </p>
+
+    <p>
+      Você tem uma força bonita, uma mistura rara, quase <em>Barbie Marley</em>,
+      mas com um jeito que acolhe. Às vezes você parece <em>Poesia 9</em>,
+      porque nem tudo precisa ser explicado, só sentido.
+    </p>
+
+    <p>
+      Se eu pudesse escolher um lugar, eu escolheria estar <em>numa ilha</em> com você.
+      Não por fugir do mundo, mas porque o simples com você vale mais
+      do que qualquer <em>Triplex</em> cheio de vazio.
+    </p>
+
+    <p>
+      Eu não prometo perfeição, mas prometo verdade.
+      Algo que eu gostaria que fosse <em>pra sempre com você</em>,
+      mesmo quando a vida muda e vira um novo <em>31.12</em>,
+      encerrando ciclos e começando outros.
+    </p>
+
+    <p>
+      <p>
+      Às vezes o que eu sinto parece meio <em>insana</em>,
+      mesmo quando tudo parece <em>nada bom</em>.
+      Tem momentos em que penso em <em>deixar-me ir</em>,
+      não por falta de sentimento, mas por medo de não saber lidar com tudo isso.
+      Ainda assim, eu volto, porque é em você que tudo faz sentido.
+    </p>
+
+    <p>
+      Quando a vida endurece como <em>a cera</em>,
+      quando bate aquela saudade antes mesmo da distância existir,
+      é em você que eu penso.
+    </p>
+
+    <p>
+      Porque quando você passa pela minha mente,
+      parece que <em>os anjos cantam</em>.
+      E é aí que eu entendo: gostar de você é querer cuidar.
+    </p>
+
+    <p>
+      Talvez soe como música romântica, mas é verdade.
+      Daquelas que dizem que amar não é pecado,
+      que a gente escreve a própria história,
+      que tudo fica melhor quando é de verdade.
+      Algo no estilo de quem espera, cuida e acredita.
+    </p>
+
+    <div class="pedido">
+      <h2>Agora, seja sincera…</h2>
+      <p>
+        Você aceitaria ser minha ?
+      </p>
+      <button onclick="confirmarSim()">Sim </button>
+    </div>
+  </div>
+
+  <script>
+    const music = document.getElementById('bgMusic');
+
+    // tenta tocar automaticamente
+    function playMusic() {
+      music.play().catch(() => {
+        // navegador bloqueou, espera interação
+      });
+    }
+
+    // toca ao carregar
+    window.addEventListener('load', () => {
+      playMusic();
+    });
+
+    // garante que após F5 volte a tocar
+    document.addEventListener('click', () => {
+      playMusic();
+    }, { once: true });
+
+    function confirmarSim() {
+      const pedido = document.querySelector('.pedido');
+      pedido.innerHTML = `
+        <h2>💜</h2>
+        <p>
+          Você acabou de aceitar.<br />
+          Prometo cuidar disso com carinho, respeito e verdade. <br>
+           Eu te amoooo muito minha princesinha lindaa.
+        </p>
+      `;
+    }
+  </script>
+
+</body>
+</html>
